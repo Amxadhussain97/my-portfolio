@@ -26,6 +26,16 @@ export const welcomeStyles = makeStyles((theme) => ({
     justifyContent: "flex-end",
     alignContent: "flex-end",
     marginLeft: "86px",
+    [theme.breakpoints.down("sm")]: {
+      width: "100%",
+      height: "220px",
+      marginLeft: "0px",
+      justifyContent: "center",
+      alignItems: "center",
+      alignContent: "center",
+      marginTop:'15px'
+
+    },
   },
   hi: {
     fontSize: "2.6rem",

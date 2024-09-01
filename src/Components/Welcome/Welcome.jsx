@@ -23,6 +23,7 @@ export default function Welcome() {
         }
       }
     >
+      <a className="anchor" id="home"></a>
       <Box>
         <Grid
           container
@@ -34,6 +35,11 @@ export default function Welcome() {
           }
         >
           <Grid item xs={12} sm={7}>
+            <Hidden implementation="css" mdUp>
+              <Box className={classes.devAnimation}>
+                <Lottie options={options} />
+              </Box>
+            </Hidden>
             <Typography
               variant="overline"
               display="block"
@@ -46,7 +52,7 @@ export default function Welcome() {
                 // increase the font character gap
                 letterSpacing: "0.2rem",
                 mt: {
-                  xs: "60px",
+                  xs: "30px",
                   sm: "12px",
                 },
               }}
@@ -56,13 +62,13 @@ export default function Welcome() {
             <h1 className={classes.hi}>
               Hi, I'm <span className={classes.name}>Amzad Hussain Tamim</span>
             </h1>
+
             <h2 className={classes.developer}>a Web Developer</h2>
             <p className={classes.developerBio}>
-              I am a full stack developer with 2 years of experience in web
-              development. I have worked with React, Node, Express, MongoDB,
-              MySQL, and Firebase. I have also worked with Material UI,
-              Bootstrap, and Tailwind CSS. I have experience in building
-              responsive websites and web applications.
+              A driven and organized software developer with more than 1 year
+              worth of full stack developing expertise and more than 5 years of
+              experience in competitive programming. Focusing on building
+              impactful systems with an emphasis on consistent self-improvement.
             </p>
 
             <Box
@@ -78,7 +84,7 @@ export default function Welcome() {
               }}
             >
               <Grid container>
-                <Grid item xs={6} sm={6}>
+                <Grid item xs={7} sm={6}>
                   <Typography
                     variant="overline"
                     display="block"
@@ -98,7 +104,7 @@ export default function Welcome() {
                     <Social />
                   </Box>
                 </Grid>
-                <Grid item xs={6} sm={6} sx={{}}>
+                <Grid item xs={5} sm={6} sx={{}}>
                   <Typography
                     variant="overline"
                     display="block"

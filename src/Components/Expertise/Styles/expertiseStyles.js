@@ -14,12 +14,12 @@ expertiseHead:{
     },
 },
 eBio:{
-    fontSize:"0.9rem",
+    fontSize:"0.8rem",
     color:"#646665",
     letterSpacing:"0.1rem",
     marginTop:"18px",
     [theme.breakpoints.down("sm")]: {
-        fontSize: "0.8rem !important",
+        fontSize: "0.7rem !important",
         width:'100%'
         },
         

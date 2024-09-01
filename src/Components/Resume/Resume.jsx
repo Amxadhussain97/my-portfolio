@@ -8,6 +8,7 @@ import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Education from "./Education/Education";
 import Experience from "./Experience/Experience";
+import Achievement from "./Achievement/Achievement";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -20,6 +21,7 @@ function TabPanel(props) {
       aria-labelledby={`full-width-tab-${index}`}
       {...other}
     >
+    
       {value === index && (
         <Box sx={{ p: 3 }}>
           <Typography>{children}</Typography>
@@ -59,6 +61,8 @@ export default function Resume() {
       }}
       className="flex-items-center"
     >
+
+<a className="anchor" id="others"></a>
       <Typography
         variant="overline"
         display="block"
@@ -72,7 +76,7 @@ export default function Resume() {
         }}
         className="section-title"
       >
-        VISIT MY PORTFOLIO AND KEEP YOUR FEEDBACK
+        MY OTHER INFO
       </Typography>
 
       <Typography
@@ -90,7 +94,7 @@ export default function Resume() {
         }}
         className="section-tag"
       >
-        My Resume
+        Others
       </Typography>
 
       <Box className={classes.resumeContainer}>
@@ -127,31 +131,22 @@ export default function Resume() {
                 sx={{
                   mr: {
                     xs: 5,
-                    sm: 25,
+                    sm: 43,
                   },
                   ml: 3,
                 }}
-                label="Education"
+                label="Experience"
                 {...a11yProps(0)}
               />
+            
               <Tab
                 sx={{
                   mr: {
                     xs: 5,
-                    sm: 25,
+                    sm: 43,
                   },
                 }}
-                label="Skills"
-                {...a11yProps(1)}
-              />
-              <Tab
-                sx={{
-                  mr: {
-                    xs: 5,
-                    sm: 25,
-                  },
-                }}
-                label="Experience"
+                label="Education"
                 {...a11yProps(2)}
               />
               <Tab label="Achievement" {...a11yProps(3)} />
@@ -162,15 +157,16 @@ export default function Resume() {
             index={value}
             onChangeIndex={handleChangeIndex}
           >
-            <TabPanel value={value} index={0} dir={theme.direction}>
-              <Education />
-            </TabPanel>
-            <TabPanel value={value} index={1} dir={theme.direction}>
-              Item Two
-            </TabPanel>
-            <TabPanel value={value} index={2} dir={theme.direction}>
+           <TabPanel value={value} index={0} dir={theme.direction}>
               <Experience />
             </TabPanel>
+            <TabPanel value={value} index={1} dir={theme.direction}>
+              <Education />
+            </TabPanel>
+            <TabPanel value={value} index={2} dir={theme.direction}>
+              <Achievement/>
+            </TabPanel>
+           
           </SwipeableViews>
         </Box>
       </Box>

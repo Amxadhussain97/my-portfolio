@@ -1,15 +1,68 @@
 import React from "react";
-import { Box, Typography, Stack, Paper, Card } from "@mui/material";
+import {
+  Box,
+  Typography,
+  Stack,
+  Paper,
+  Card,
+  Chip,
+  IconButton,
+} from "@mui/material";
 import { useProjectStyles } from "./Styles/projectsStyles";
-import PublicIcon from '@mui/icons-material/Public';
-import LockIcon from '@mui/icons-material/Lock';
+import PublicIcon from "@mui/icons-material/Public";
+import LockIcon from "@mui/icons-material/Lock";
+import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
+import ekcupchaIMG from "../../assets/images/projects/ekcupcha/ekcupcha.png";
+import madrasaIMG from "../../assets/images/projects/madrasa/madrasaone.png";
+import hecclIMG from "../../assets/images/projects/heccl/hecclone.png";
+import amaderlabMG from "../../assets/images/projects/amaderlab/amaderlab.png";
 
 export default function Projects() {
   const classes = useProjectStyles();
 
-  let items = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+  let items = [
+    {
+      name: "Ek Cup Cha",
+      description:
+        "A website for the content creators to get money from their followers.",
+      tech: ["React","Laravel", "Redux", "Material UI"],
+      link: "http://ekcupcha.com/",
+      img: ekcupchaIMG,
+      type:"Public"
+    },
+    {
+      name: "Madrasa Website",
+      description:
+        "A full-stack educational institution management website",
+      tech: ["React","Laravel", "Redux", "Material UI","AG GRID"],
+      link: "http://test.amaderlab.xyz/",
+      img: madrasaIMG,
+      type:"Private"
+    },
+    {
+      name: "Heccl Website",
+      description:
+        "A full-stack website for  a fertilizer factory ",
+      tech: ["React","NodeJs", "Redux", "Tallwind","AG GRID"],
+      link: "http://infocube.amaderlab.xyz/",
+      img: hecclIMG,
+      type:"Private"
+    },
+    {
+      name: "Amaderlab Website",
+      // define description as a company portfolio website
+      description: "A website for a software company",
+      tech: ["React","Laravel",  "Material UI"],
+      link: "http://main.amaderlab.xyz/",
+      img: amaderlabMG,
+      type:"Public"
+
+      
+    }
+  ];
   return (
-    <Box  className="flex-items-center">
+    <Box className="flex-items-center">
+      <a className="anchor" id="projects"></a>
       <Typography
         variant="overline"
         display="block"
@@ -23,7 +76,7 @@ export default function Projects() {
         }}
         className="section-title"
       >
-        VISIT MY PORTFOLIO AND KEEP YOUR FEEDBACK
+        VISIT MY PROJECTS
       </Typography>
 
       <Typography
@@ -43,7 +96,7 @@ export default function Projects() {
       >
         My Projects
       </Typography>
-      <Box fullWidth sx={{ width: "90%", mt: 6, }}>
+      <Box fullWidth sx={{ width: "100%", mt: 6, px: "2%" }}>
         {/* make stack */}
         <Stack
           direction="row"
@@ -65,53 +118,122 @@ export default function Projects() {
                 elevation={1}
                 sx={{
                   px: 3,
-                  pt:4,
+                  pt: 4,
                   width: {
                     xs: "90%",
                     sm: "31%",
                   },
                   borderRadius: "15px",
-                  height: {
-                    xs: "280px",
-                    sm: "480px",
-                  },
+                  // height: {
+                  //   xs: "280px",
+                  //   sm: "480px",
+                  // },
                 }}
                 className={classes.projectCard}
               >
                 {/* make image */}
                 <Box
                   sx={{
-                    width: "100%",
-                    height: "280px",
+                    // width: "auto",
+                    // height: "900px !important",
                     overflow: "hidden",
                     borderRadius: "15px",
+                    // background:'red'
+                    height:{
+                      xs:'200px',
+                      sm:'210px'
+                    }
                   }}
                 >
                   <Box className={classes.projectStatus}>
-                    <Typography variant="caption" display="block" gutterBottom sx={{fontSize:'0.6rem',}}>
-                      Public
+                    <Typography
+                      variant="caption"
+                      display="block"
+                      gutterBottom
+                      sx={{ fontSize: "0.6rem" }}
+                    >
+                      {
+                        item?.type
+                      }
                     </Typography>
-                    <PublicIcon sx={{ fontSize:'0.9rem',pt:0.3,mx:0.5}}/>
+                 {
+                    item?.type === "Public" ?    <PublicIcon sx={{ fontSize: "0.9rem", pt: 0.3, mx: 0.5 }} />:    <LockIcon sx={{ fontSize: "0.9rem", pt: 0.3, mx: 0.5 }} />
+                 }
                   </Box>
                   <img
-                    src="https://rainbowit.net/themes/inbio/wp-content/uploads/2021/08/portfolio-large-02-340x250.jpg"
+                    src={item?.img}
                     alt="merchandise"
                     style={{
                       objectFit: "cover",
                       width: "100%",
-                      height: "100%",
                     }}
+                    className={classes?.projectIMG}
                   />
-                  
                 </Box>
 
                 <Typography
                   variant="h7"
                   gutterBottom
-                  sx={{ fontWeight: "450",my:2 }}
+                  sx={{
+                    fontWeight: "450",
+                    my: 2,
+                    fontSize: {
+                      xs: "1.1rem",
+                      sm: "1.3rem",
+                    },
+                  }}
                 >
-                BughiChugi Site
+                  {item?.name}
                 </Typography>
+
+                <Typography
+                  variant="body2"
+                  gutterBottom
+                  sx={{
+                    color: "#646665",
+                    fontSize: "0.8rem",
+                    my: 2,
+                    // height:{
+                    //   xs:'100px',
+                    //   sm:'100px'
+                    // }
+                  }}
+                >
+                  {item?.description}
+                </Typography>
+                <Stack
+                  direction="row"
+                  justifyContent={"space-between"}
+                  sx={{ my: 2 }}
+                >
+                  <Box
+                    sx={{
+                      display: "flex",
+                      gap: 1,
+                      alignItems: "center",
+                      // my: 2,
+                    }}
+                  >
+                    {item?.tech.map((tech, index) => {
+                      return (
+                        <>
+                          <Chip
+                            label={tech}
+                            size="small"
+                            variant="outlined"
+                            className={classes.projectTech}
+                          />
+                        </>
+                      );
+                    })}
+                  </Box>
+                  <IconButton>
+                    <KeyboardArrowRightIcon
+                      className="moreIcon"
+                      onClick={() => window.open(item?.link, "_blank")}
+                    />
+                  </IconButton>
+                </Stack>
 
                 {/* <PrimaryButton fullWidth sx={{ my: 3 }}>
                   Get this for 550

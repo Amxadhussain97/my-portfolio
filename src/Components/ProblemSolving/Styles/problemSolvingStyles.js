@@ -29,6 +29,10 @@ export const useProblemSolvingStyles = makeStyles((theme) => ({
     },
     psDetails:{
         fontSize:'0.6rem !important',
+        [theme.breakpoints.down("sm")]:{
+            fontSize:'0.5rem !important'
+
+        }
     }
 
 }))

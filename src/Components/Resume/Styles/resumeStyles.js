@@ -47,6 +47,7 @@ export const useResumeStyles = makeStyles((theme) => ({
 
   resumeContainer: {
     width: "100vw",
+    height:'100%',
     background: [theme.palette.secondary.main],
     padding: "10% 10%",
     display:'flex',
@@ -57,10 +58,11 @@ export const useResumeStyles = makeStyles((theme) => ({
 
   resumeDetailsContainer: {
     position: "relative",
-    height:'400px',
+    height:'430px',
     width:'100%',
     display:'flex',
     flexDirection:'row',
+    backgrounbd:'red',
     "& .resumeCardContainer": {
       position: "absolute",
       left: "6%",
@@ -73,7 +75,7 @@ export const useResumeStyles = makeStyles((theme) => ({
 
 
       "& .resumeCard": {
-        height:'200px',
+        height:'auto',
         marginBottom:'10px',
 
       }

@@ -2,6 +2,7 @@ import React from 'react'
 import { Paper,Box,Avatar } from '@mui/material'
 import reactIMG from "../../../assets/images/react.png"
 import laravelIMG from "../../../assets/images/laravel.png"
+import nodeIMG from "../../../assets/images/node.png"
 import { welcomeStyles } from '../Styles/welcomeStyles'
 
 export default function Skills() {
@@ -12,8 +13,12 @@ export default function Skills() {
                 <Avatar src={reactIMG} alt="react" className={classes.skillImg} />
             </Paper>
             <Paper elevation={1} sx={{borderRadius:'9px'}} >
+                <Avatar src={nodeIMG} alt="react" className={classes.skillImg} />
+            </Paper>
+            <Paper elevation={1} sx={{borderRadius:'9px'}} >
                 <Avatar src={laravelIMG} alt="react" className={classes.skillImg} />
             </Paper>
+           
     </Box>
   )
 }

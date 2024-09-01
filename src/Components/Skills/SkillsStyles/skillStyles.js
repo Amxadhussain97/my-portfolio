@@ -38,6 +38,9 @@ export const useSkillStyles = makeStyles((theme) => ({
     // alignItems:'center',
     // flexWrap:'wrap',\
     padding: "3% 15% !important",
+    [theme.breakpoints.down("sm")]: {
+      padding: "3% 7% !important",
+  },
   },
 
   skillCard: {

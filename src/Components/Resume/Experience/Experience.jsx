@@ -16,7 +16,7 @@ export default function Experience() {
         </div>
       </Box>
       <Box className="resumeCardContainer">
-        <Paper
+      <Paper
           className="resumeCard"
           variant="outlined"
           sx={{ borderRadius: "9px", p: 3 }}
@@ -33,7 +33,7 @@ export default function Experience() {
                 },
               }}
             >
-              Software Engineer ( React | Laravel )
+            Web Developer  ( Symfony ) 
             </Typography>
             <Typography
               variant="caption"
@@ -46,7 +46,7 @@ export default function Experience() {
                 },
               }}
             >
-              Karigor Solutions (2017-2020)
+               Newboxes GMBH ( October 2023 - Present)
             </Typography>
 
             <Divider sx={{ my: 2 }} />
@@ -61,15 +61,14 @@ export default function Experience() {
                 },
               }}
             >
-              The training provided by universities in order to prepare people
-              to work in various sectors of the economy or areas of culture.
+              Developed full stack web application and maintained proper scalability and performances.
             </Typography>
           </Box>
         </Paper>
         <Paper
           className="resumeCard"
           variant="outlined"
-          sx={{ borderRadius: "9px", p: 3 }}
+          sx={{ borderRadius: "9px", p: 4 }}
         >
           <Box>
             <Typography
@@ -83,7 +82,7 @@ export default function Experience() {
                 },
               }}
             >
-              AmaderLab ( React | Laravel )
+              Software Engineer ( React | NodeJS | Laravel )
             </Typography>
             <Typography
               variant="caption"
@@ -96,7 +95,7 @@ export default function Experience() {
                 },
               }}
             >
-              Leading University (2017-2020)
+              Karigor Solutions ( December 2022 - February 2023)
             </Typography>
 
             <Divider sx={{ my: 2 }} />
@@ -108,14 +107,14 @@ export default function Experience() {
                 fontSize: {
                   xs: "0.7rem",
                   sm: "0.9rem",
-                },
+                }
               }}
             >
-              The training provided by universities in order to prepare people
-              to work in various sectors of the economy or areas of culture.
+             Developed full stack web application and maintained proper scalability and performances.
             </Typography>
           </Box>
         </Paper>
+       
       </Box>
     </Box>
   );

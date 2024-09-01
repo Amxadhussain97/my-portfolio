@@ -2,20 +2,22 @@ import React, { useState } from "react";
 import { useSkillStyles } from "./SkillsStyles/skillStyles";
 import { Box, Typography, Paper, Grid } from "@mui/material";
 import SkillItem from "./SkillItem/SkillItem";
-import ReactIMG from "../../assets/images/react.png"
-import LaravelIMG from "../../assets/images/laravel.png"
-import htmlIMG from "../../assets/images/html.png"
-import cssIMG from "../../assets/images/css.png"
-import jsIMG from "../../assets/images/js.png"
-import phpIMG from "../../assets/images/php.png"
-import pythonIMG from "../../assets/images/python.png"
-import reduxIMG from "../../assets/images/redux.png"
-import muiIMG from "../../assets/images/mui.png"
-import bootstrapIMG from "../../assets/images/bootstrap.png"
-import jiraMG from "../../assets/images/jira.jpeg"
-import gitMG from "../../assets/images/git.png"
-import puppeterbMG from "../../assets/images/puppeter.png"
-
+import ReactIMG from "../../assets/images/react.png";
+import LaravelIMG from "../../assets/images/laravel.png";
+import htmlIMG from "../../assets/images/html.png";
+import cssIMG from "../../assets/images/css.png";
+import jsIMG from "../../assets/images/js.png";
+import phpIMG from "../../assets/images/php.png";
+import pythonIMG from "../../assets/images/python.png";
+import reduxIMG from "../../assets/images/redux.png";
+import muiIMG from "../../assets/images/mui.png";
+import bootstrapIMG from "../../assets/images/bootstrap.png";
+import jiraMG from "../../assets/images/jira.jpeg";
+import gitMG from "../../assets/images/git.png";
+import puppeterbMG from "../../assets/images/puppeter.png";
+import nodeIMG from "../../assets/images/node.png";
+import symfonyIMG from "../../assets/images/symfony.png";
+import tallwindIMG from "../../assets/images/tallwind.png";
 
 export default function Skills() {
   const classes = useSkillStyles();
@@ -31,12 +33,6 @@ export default function Skills() {
           value: "Medium",
         },
         {
-          id: 2,
-          name: "CSS",
-          logoPath: cssIMG,
-          value: "Medium",
-        },
-        {
           id: 3,
           name: "Javascript",
           logoPath: jsIMG,
@@ -49,11 +45,11 @@ export default function Skills() {
           value: "Expert",
         },
         {
-            id: 5,
-            name: "Python",
-            logoPath: pythonIMG,
-            value: "Expert",
-          },
+          id: 5,
+          name: "Python",
+          logoPath: pythonIMG,
+          value: "Expert",
+        },
       ],
     },
     {
@@ -67,9 +63,21 @@ export default function Skills() {
           value: "Medium",
         },
         {
+          id: 1,
+          name: "Node Js",
+          logoPath: nodeIMG,
+          value: "Medium",
+        },
+        {
           id: 2,
           name: "Laravel",
           logoPath: LaravelIMG,
+          value: "Medium",
+        },
+        {
+          id: 2,
+          name: "Symfony",
+          logoPath: symfonyIMG,
           value: "Medium",
         },
         {
@@ -79,50 +87,58 @@ export default function Skills() {
           value: "Expert",
         },
         {
-            id: 3,
-            name: "Material UI",
-            logoPath: muiIMG,
-            value: "Expert",
-          },
-          {
-            id: 3,
-            name: "Bootstrap",
-            logoPath: bootstrapIMG,
-          }
+          id: 4,
+          name: "Material UI",
+          logoPath: muiIMG,
+          value: "Expert",
+        },
+        {
+          id: 4,
+          name: "Tallwind CSS",
+          logoPath: tallwindIMG,
+          value: "Expert",
+        },
+        {
+          id: 5,
+          name: "Bootstrap",
+          logoPath: bootstrapIMG,
+        },
       ],
     },
     {
-        id:3,
-        section:"TOOLS",
-        items:[
-            {
-                id:1,
-                name:"Jira",
-                logoPath:jiraMG,
-                value:"Expert"
-            },
-            {
-                id:2,
-                name:"Git",
-                logoPath:gitMG,
-            }
-        ]
+      id: 3,
+      section: "TOOLS",
+      items: [
+        {
+          id: 1,
+          name: "Jira",
+          logoPath: jiraMG,
+          value: "Expert",
+        },
+        {
+          id: 2,
+          name: "Git",
+          logoPath: gitMG,
+        },
+      ],
     },
     {
-        id:4,
-        section:"Web Scraping",
-        items:[
-            {
-                id:1,
-                name:"Puppeteer JS",
-                logoPath:puppeterbMG,
-            }]
-    }
+      id: 4,
+      section: "Web Scraping",
+      items: [
+        {
+          id: 1,
+          name: "Puppeteer JS",
+          logoPath: puppeterbMG,
+        },
+      ],
+    },
   ]);
 
   return (
     <div>
       <Box className="flex-items-center">
+        <a className="anchor" id="skills"></a>
         <Typography
           variant="overline"
           display="block"
@@ -135,7 +151,6 @@ export default function Skills() {
             textAlign: "center",
           }}
           className="section-title"
-
         >
           My Skills
         </Typography>
@@ -158,7 +173,6 @@ export default function Skills() {
           Skills
         </Typography>
         <Box className={classes.skillContainer}>
-     
           {skills.map((skill, index) => {
             return <SkillItem skill={skill} />;
           })}
